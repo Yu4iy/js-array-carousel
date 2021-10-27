@@ -91,3 +91,21 @@ next.addEventListener('click', function() {
 
 })
 
+const prev = document.querySelector('.prev');
+
+prev.addEventListener('click', function() {
+    if (activeImage < 1) {
+        activeImage = imageCollection.length -1;        
+    } else {
+        activeImage--;
+    }
+
+    document.querySelector('.image-container.active').classList.remove('active');
+    document.getElementsByClassName('image-container')[activeImage].classList.add('active')
+    
+    document.querySelector('.thumb.active').classList.remove('active')
+
+    document.getElementsByClassName('thumb')[activeImage].classList.add('active')
+
+
+})
